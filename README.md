@@ -8,9 +8,9 @@
 服务器端股票系统公共部分源码释放为BOA框架（PHP），见poetbi/boa项目
 
 ## 下载
-页面右侧release里面或访问 http://boasoft.cn/?m=api&n=boabot
+页面右侧Releases里面或访问 http://boasoft.cn/?m=api&n=boabot
 
-## 注意：
+## 注意
 1.默认可以在屏幕手动点击选取目标对象，对于隐藏较深的目标对象，可借助UIAutomatorViewer等可视化工具人工查找具有clickable属性的对象，并计算好层级关系；
 
 2.内容支持输入带参数的URL由外部程序系统动态提供内容，比如集成chatGPT来实现智能回复；
