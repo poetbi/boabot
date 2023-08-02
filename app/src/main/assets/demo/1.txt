@@ -1,0 +1,15 @@
+'发个朋友圈'
+
+'start','app','com.tencent.mm','0,3,0','启动微信'
+
+'click','$2#com.tencent.mm:id/kdk#0','0','0,1,0','点击发现'
+
+'click','$0#com.tencent.mm:id/iwp#0','0','0,1,0','点击朋友圈'
+
+'click','@0#拍照分享#1','1','0,1,0','长按相机图标'
+
+'input','$1#com.tencent.mm:id/jt9#0','boabot是一款通用配置式机器人，无需编程，通过可视化界面配置任务和工作流即可实现自动化操作\n\n下载地址：http://boasoft.cn/api/\n\n（本信息由boabot自动发布）','0,1,0','输入内容'
+
+'click','$0#com.tencent.mm:id/em#0','0','0,1,0','点击发表'
+
+'close','','','0,1,0','关闭微信'

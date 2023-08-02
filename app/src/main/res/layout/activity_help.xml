@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".help">
+
+    <include
+        android:id="@+id/head"
+        layout="@layout/inc_head"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/head_height"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/title"
+        android:text="@string/title_help"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/head"/>
+
+    <ScrollView
+        android:id="@+id/body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/scroll_padding"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/row_space"
+                android:text="关于"
+                android:textSize="18sp" />
+            <TextView
+                style="@style/content"
+                android:text="          boabot是一款通用配置式机器人，无需编程，通过可视化界面配置任务和工作流即可实现自动化操作" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/row_space"
+                android:text="保活"
+                android:textSize="18sp" />
+            <TextView
+                style="@style/content"
+                android:text="      进程可能会在锁屏期间、电量不足或内存不足的情况下，被系统回收清理，因此务必做好保活处理。一般在手机管家/电池或系统/应用/权限里设置，详情请点击以下列表：" />
+            <TextView
+                style="@style/content"
+                android:clickable="true"
+                android:onClick="doLinkBH"
+                android:text="          允许应用自启动"
+                android:textColor="@color/link" />
+            <TextView
+                style="@style/content"
+                android:clickable="true"
+                android:onClick="doLinkBH"
+                android:text="          加入省电白名单"
+                android:textColor="@color/link" />
+            <TextView
+                style="@style/content"
+                android:clickable="true"
+                android:onClick="doLinkBH"
+                android:text="          锁屏受保护应用"
+                android:textColor="@color/link" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/row_space"
+                android:text="任务"
+                android:textSize="18sp" />
+            <TextView
+                style="@style/content"
+                android:text="      任务列表侧滑出现5个按钮，分别表示：删除，修改，复制，执行，工作流" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/row_space"
+                android:text="工作流"
+                android:textSize="18sp" />
+            <TextView
+                style="@style/content"
+                android:text="      工作流列表侧滑按钮分别表示：删除和修改；列表上可以通过长按拖拽实现工作流排序" />
+            <TextView
+                style="@style/content"
+                android:paddingTop="10dp"
+                android:text="      工作流选择对象：在目标APP上某元素上点击，看到下方有提示表示选择成功，选不到可以多试几次" />
+            <TextView
+                style="@style/content"
+                android:paddingTop="10dp"
+                android:text="      工作流输入内容：1. 支持输入URL（以@开头），每次执行时动态获取该URL提供的内容，方便程序员用程序来实现；2. 支持输入{BOA}标签，每次执行接受动态传参来替换标签，比如手动和遥控触发时val的传值，多个值用|分割，分别替换{BOA0}至{BOAn}" />
+            <TextView
+                style="@style/content"
+                android:paddingTop="10dp"
+                android:text="      工作流可选步骤：有的页面会有临时弹出需要点掉，若有则执行此步，没有便跳过" />
+            <TextView
+                style="@style/content"
+                android:paddingTop="10dp"
+                android:text="      工作流手写格式：如下图表示按id查询，取结果第1元素，再取往上2级的父元素。可以使用 UIAutomatorViewer 工具查找元素id或text" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/format" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/row_space"
+                android:text="日志"
+                android:textSize="18sp" />
+            <TextView
+                style="@style/content"
+                android:text="      列表下拉加载更多，点击日志项查看详情" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/row_space"
+                android:text="注意"
+                android:textSize="18sp" />
+            <TextView
+                style="@style/content"
+                android:text="      若机器人出现故障无法开启，可以尝试停止服务后再开启" />
+            <TextView
+                style="@style/content"
+                android:text="      若测试(每步延长3秒)可以正常执行不行，适度增加等待时长" />
+            <TextView
+                style="@style/content"
+                android:text="      任务执行期间会自动拒接所有来电，执行较长的任务注意时间点" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

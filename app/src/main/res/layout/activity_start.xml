@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".start">
+
+    <include
+        android:id="@+id/head"
+        layout="@layout/inc_head"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/head_height"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ScrollView
+        android:id="@+id/body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/scroll_padding_notitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/head">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/row_space"
+                android:background="@drawable/shape_border"
+                android:padding="10dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text2"
+                    android:text="@string/last_execute"/>
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:id="@+id/last_execute"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingMultiplier="1.3"
+                        android:textSize="13sp"/>
+                </ScrollView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/shape_border"
+                android:layout_marginTop="@dimen/row_space"
+                android:padding="10dp">
+
+                <Spinner
+                    android:id="@+id/tasks1"
+                    style="@style/select" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+                    <Button
+                        style="@style/submit"
+                        android:onClick="doImport"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/import_task"/>
+                    <Button
+                        style="@style/submit"
+                        android:onClick="doExport"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/export_task"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <ViewFlipper
+                android:id="@+id/ads"
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:layout_marginTop="@dimen/row_space"
+                android:autoStart="true"
+                android:flipInterval="5000"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/shape_border"
+                android:layout_marginTop="@dimen/row_space"
+                android:padding="10dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <Spinner
+                    android:id="@+id/tasks"
+                    style="@style/select" />
+
+                <EditText
+                    android:id="@+id/val"
+                    style="@style/input"
+                    android:layout_width="match_parent"
+                    android:layout_height="66dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp"
+                    android:hint="@string/param"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+                    <Button
+                        style="@style/submit"
+                        android:onClick="doTest"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/test"/>
+                    <Button
+                        style="@style/submit"
+                        android:onClick="doStop"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/stop"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/row_space"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text2"
+                    android:text="@string/copyright" />
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginLeft="10dp"
+                    android:clickable="true"
+                    android:onClick="doWechat"
+                    android:src="@drawable/wx" />
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginLeft="10dp"
+                    android:clickable="true"
+                    android:onClick="doEmail"
+                    android:src="@drawable/mail" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/sqldiv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/head_height"
+        android:background="#ffffff"
+        android:padding="20dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <EditText
+            android:id="@+id/sql"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:gravity="start|top"/>
+        <Button
+            style="@style/submit"
+            android:layout_gravity="right|bottom"
+            android:onClick="doFinish"
+            android:text="@string/button" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

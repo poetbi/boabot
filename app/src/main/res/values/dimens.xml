@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="row_space">20dp</dimen>
+    <dimen name="head_height">60dp</dimen>
+    <dimen name="title_height">50dp</dimen>
+    <dimen name="item_task_icon">60dp</dimen>
+    <dimen name="item_flow_icon">50dp</dimen>
+    <dimen name="scroll_padding">125dp</dimen> <!-- head_height + title_height + 15 -->
+    <dimen name="scroll_padding_notitle">75dp</dimen> <!-- head_height + title_height + 15 -->
+</resources>

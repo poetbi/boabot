@@ -1,0 +1,76 @@
+<resources>
+    <string-array name="status_v">
+        <item>关闭</item>
+        <item>开启</item>
+    </string-array>
+
+    <string-array name="type_v">
+        <item>手动</item>
+        <item>定时</item>
+        <item>遥控</item>
+    </string-array>
+
+    <string-array name="week_v">
+        <item>周一</item>
+        <item>周二</item>
+        <item>周三</item>
+        <item>周四</item>
+        <item>周五</item>
+        <item>周六</item>
+        <item>周日</item>
+    </string-array>
+
+    <string-array name="cmd_k">
+        <item>start</item>
+        <item>click</item>
+        <item>input</item>
+        <item>check</item>
+        <item>goto</item>
+        <item>close</item>
+    </string-array>
+    <string-array name="cmd_v">
+        <item>启动</item>
+        <item>点击</item>
+        <item>输入</item>
+        <item>判断</item>
+        <item>跳转</item>
+        <item>关闭</item>
+    </string-array>
+
+    <string-array name="start_k">
+        <item>app</item>
+    </string-array>
+    <string-array name="start_v">
+        <item>应用</item>
+    </string-array>
+    <string-array name="start_tip">
+        <item>应用</item>
+    </string-array>
+
+    <string-array name="click_v">
+        <item>单击</item>
+        <item>长按</item>
+        <item>返回</item>
+        <item>截屏</item> <!-- API 28+ -->
+    </string-array>
+
+    <string-array name="obj_type_v">
+        <item>自动</item>
+        <item>手动</item>
+    </string-array>
+
+    <string-array name="step_v">
+        <item>固定步骤</item>
+        <item>可选步骤</item>
+    </string-array>
+
+    <string-array name="check_obj_v">
+        <item>对象不存在跳到</item>
+        <item>对象存在时跳到</item>
+    </string-array>
+
+    <string-array name="goto_v">
+        <item>工作流</item>
+        <item>任务</item>
+    </string-array>
+</resources>

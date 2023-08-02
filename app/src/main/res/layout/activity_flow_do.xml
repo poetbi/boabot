@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".flow_do">
+
+    <include
+        android:id="@+id/head"
+        layout="@layout/inc_head"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/head_height"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/scroll_padding_notitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/head">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:stretchColumns="*"> <!--拦截屏蔽内层自动聚焦-->
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/row_space">
+
+                    <TextView
+                        style="@style/label"
+                        android:layout_column="0"
+                        android:text="@string/flow_cmd" />
+
+                    <Spinner
+                        android:id="@+id/cmd"
+                        style="@style/select"
+                        android:layout_column="1"
+                        android:layout_weight="1" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/row_space">
+
+                    <TextView
+                        style="@style/label"
+                        android:layout_column="0"
+                        android:text="@string/flow_obj" />
+
+                    <EditText
+                        android:id="@+id/obj"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:visibility="gone" />
+
+                    <Spinner
+                        android:id="@+id/obj_0"
+                        style="@style/select"
+                        android:layout_column="1"
+                        android:layout_weight="1" />
+
+                    <LinearLayout
+                        android:id="@+id/obj_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <Spinner
+                            android:id="@+id/obj1_type"
+                            style="@style/select"
+                            android:layout_width="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/obj1_type0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:gravity="center"
+                            android:onClick="doStart"
+                            android:text="@string/flow_obj_choose" />
+
+                        <EditText
+                            android:id="@+id/obj1_type1"
+                            style="@style/input"
+                            android:layout_weight="1"
+                            android:hint="@string/flow_obj_help"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/obj_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <Spinner
+                            android:id="@+id/obj2_type"
+                            style="@style/select"
+                            android:layout_width="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/obj2_type0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:gravity="center"
+                            android:onClick="doStart"
+                            android:text="@string/flow_obj_choose" />
+
+                        <EditText
+                            android:id="@+id/obj2_type1"
+                            style="@style/input"
+                            android:layout_weight="1"
+                            android:hint="@string/flow_obj_help"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/obj_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <Spinner
+                            android:id="@+id/obj3_type"
+                            style="@style/select"
+                            android:layout_width="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/obj3_type0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:gravity="center"
+                            android:onClick="doStart"
+                            android:text="@string/flow_obj_choose" />
+
+                        <EditText
+                            android:id="@+id/obj3_type1"
+                            style="@style/input"
+                            android:layout_weight="1"
+                            android:hint="@string/flow_obj_help"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <Spinner
+                        android:id="@+id/obj_4"
+                        style="@style/select"
+                        android:layout_column="1"
+                        android:layout_weight="1"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/obj_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/none"
+                        android:visibility="gone" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/row_space">
+
+                    <TextView
+                        style="@style/label"
+                        android:layout_column="0"
+                        android:text="@string/flow_val" />
+
+                    <EditText
+                        android:id="@+id/val"
+                        style="@style/input"
+                        android:layout_column="1"
+                        android:layout_weight="1"
+                        android:visibility="gone" />
+
+                    <Spinner
+                        android:id="@+id/val_0"
+                        style="@style/select"
+                        android:layout_column="1"
+                        android:layout_weight="1" />
+
+                    <Spinner
+                        android:id="@+id/val_1"
+                        style="@style/select"
+                        android:layout_column="1"
+                        android:layout_weight="1"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/val_2"
+                        style="@style/input"
+                        android:layout_height="150dp"
+                        android:layout_column="1"
+                        android:layout_weight="1"
+                        android:gravity="start|top"
+                        android:hint="@string/flow_val_remote"
+                        android:inputType="textMultiLine"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/val_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+                        <Spinner
+                            android:id="@+id/check_obj"
+                            style="@style/select"
+                            android:layout_weight="1" />
+                        <Spinner
+                            android:id="@+id/check_goto"
+                            style="@style/select"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+
+                    <Spinner
+                        android:id="@+id/val_4"
+                        style="@style/select"
+                        android:layout_column="1"
+                        android:layout_weight="1"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/val_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/none"
+                        android:visibility="gone" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/row_space">
+
+                    <TextView
+                        style="@style/label"
+                        android:layout_column="0"
+                        android:text="@string/flow_ctl" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <CheckBox
+                            android:id="@+id/ctl_for"
+                            style="@style/check"
+                            android:layout_width="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="@string/flow_ctl_for"
+                            android:visibility="gone"/>
+
+                        <LinearLayout
+                            android:id="@+id/ctl_loop0"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+                            <TextView
+                                style="@style/label"
+                                android:text="@string/flow_ctl_loop" />
+                            <EditText
+                                android:id="@+id/ctl_loop"
+                                style="@style/input"
+                                android:layout_weight="1"
+                                android:hint="@string/flow_ctl_loop_tip"
+                                android:inputType="number" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ctl_wait0"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+                            <TextView
+                                style="@style/label"
+                                android:text="@string/flow_ctl_wait" />
+                            <EditText
+                                android:id="@+id/ctl_wait"
+                                style="@style/input"
+                                android:layout_weight="1"
+                                android:hint="@string/flow_ctl_wait_tip"
+                                android:inputType="number" />
+                        </LinearLayout>
+
+                        <Spinner
+                            android:id="@+id/ctl_step"
+                            style="@style/select"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:visibility="gone"/>
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/row_space">
+
+                    <TextView
+                        style="@style/label"
+                        android:layout_column="0"
+                        android:text="@string/flow_memo" />
+
+                    <EditText
+                        android:id="@+id/memo"
+                        style="@style/input"
+                        android:layout_column="1"
+                        android:layout_weight="1"
+                        android:hint="@string/flow_memo" />
+                </TableRow>
+
+            </TableLayout>
+
+            <Button
+                android:id="@+id/submit"
+                style="@style/submit"
+                android:layout_gravity="center"
+                android:onClick="doSave"
+                android:text="@string/add_flow" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/browser"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone">
+            <WebView
+                android:id="@+id/webview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:foregroundGravity="center"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|right"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:clickable="true"
+                    android:onClick="doWvclose"
+                    android:src="@drawable/close" />
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:onClick="doWvrefresh"
+                    android:src="@drawable/refresh" />
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:onClick="doWvback"
+                    android:src="@drawable/back" />
+            </LinearLayout>
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

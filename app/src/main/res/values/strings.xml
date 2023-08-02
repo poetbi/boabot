@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">boa机器人</string>
+    <string name="title_activity_index">boa机器人</string>
+    <string name="bot_desc">boabot：配置式机器人，无需编程实现手机自动化操作</string>
+    <string name="last_execute">最近执行</string>
+    <string name="next_execute">即将执行</string>
+    <string name="none">无</string>
+    <string name="param">传参(多个用|分割)，替换{BOA}标签</string>
+    <string name="auth">打开APP，关掉再点测试</string>
+    <string name="test">测试</string>
+    <string name="stop">停止</string>
+    <string name="import_task">导入</string>
+    <string name="export_task">导出</string>
+    <string name="button">确定</string>
+    <string name="permission">获取授权失败</string>
+    <string name="done">操作成功</string>
+    <string name="build_sdk28">限安卓9及以上机型</string>
+    <string name="copyright">© 2022 boasoft.cn 版权所有</string>
+
+    <string name="task">任务</string>
+    <string name="config">设置</string>
+    <string name="log">日志</string>
+    <string name="help">帮助</string>
+    <string name="flow">工作流</string>
+    <string name="addnew">添加</string>
+
+    <string name="title_task">我的任务</string>
+    <string name="add_task">保存任务</string>
+    <string name="task_name">名称</string>
+    <string name="task_status">状态</string>
+    <string name="task_type">触发</string>
+    <string name="task_exec">条件</string>
+    <string name="task_do_copy">任务已复制</string>
+    <string name="task_do_exec">任务开启</string>
+    <string name="task_do_stop">任务终止</string>
+    <string name="task_set_exec"><u>请于远程平台设置条件</u></string>
+    <string name="task_url_exec">支持 boa://bot/?tid=x&amp;val=x 形式调用</string>
+    <string name="task_input_name">请输入任务名称</string>
+
+    <string name="add_flow">保存工作流</string>
+    <string name="flow_cmd">指令</string>
+    <string name="flow_obj">对象</string>
+    <string name="flow_val">内容</string>
+    <string name="flow_ctl">控制</string>
+    <string name="flow_ctl_loop">循环</string>
+    <string name="flow_ctl_wait">时长</string>
+    <string name="flow_memo">备注</string>
+    <string name="flow_get">boa已选中</string>
+    <string name="flow_obj_choose"><u>点此在相应对象上点击</u></string>
+    <string name="flow_obj_help">格式参见帮助</string>
+    <string name="flow_ctl_for">跳转循环时可遍历</string>
+    <string name="flow_ctl_loop_tip">循环(次) 0=自动</string>
+    <string name="flow_ctl_wait_tip">等待时长(秒)</string>
+    <string name="flow_wait_min">建议等待时长不低于3秒</string>
+    <string name="flow_obj_required">对象不能为空</string>
+    <string name="flow_val_required">内容不能为空</string>
+    <string name="flow_memo_required">备注不能为空</string>
+    <string name="flow_start_have">此任务已有启动</string>
+    <string name="flow_no_app">未设置启动APP</string>
+    <string name="flow_val_remote">支持URL，以@开头，每次动态获取内容\n支持{BOA}标签，可被传参替换</string>
+
+    <string name="title_config">系统设置</string>
+    <string name="add_config">保存设置</string>
+    <string name="config_robot">机器人检测</string>
+    <string name="config_robot_y">自动</string>
+    <string name="config_robot_n">关闭</string>
+    <string name="config_remote">远程连接</string>
+    <string name="config_user">连接账号</string>
+    <string name="config_pass">连接密码</string>
+    <string name="config_notice">通知静音</string>
+    <string name="config_log">日志保留</string>
+    <string name="config_user_set">请设置连接账号</string>
+    <string name="config_pass_set">请设置连接密码</string>
+
+    <string name="title_log">系统日志</string>
+    <string name="log_id">日志ID</string>
+    <string name="log_tid">任务ID</string>
+    <string name="log_fid">工作流ID</string>
+    <string name="log_memo">工作流</string>
+    <string name="log_val">内容</string>
+    <string name="log_res">结果</string>
+    <string name="log_time">时间</string>
+
+    <string name="title_help">使用帮助</string>
+    <string name="agree">同意</string>
+    <string name="disagree">不同意</string>
+
+    <string name="unit_minute">分</string>
+    <string name="per_hour">每小时</string>
+    <string name="unit_hour">时</string>
+    <string name="per_day">每日</string>
+    <string name="unit_day">号</string>
+    <string name="per_month">每月</string>
+    <string name="unit_month">月</string>
+
+    <string name="dialog_tit_del">删除提示</string>
+    <string name="dialog_msg_del">确认删除？</string>
+    <string name="dialog_btn_y">是</string>
+    <string name="dialog_btn_n">否</string>
+    <string name="dialog_tit_app">更新提示</string>
+    <string name="dialog_msg_app">boabot有新版本</string>
+    <string name="dialog_btn_up">升级</string>
+</resources>

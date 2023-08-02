@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".task_do">
+
+    <include
+        android:id="@+id/head"
+        layout="@layout/inc_head"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/head_height"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ScrollView
+        android:id="@+id/body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/scroll_padding_notitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/head">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*"
+                android:focusable="true"
+                android:focusableInTouchMode="true"> <!--拦截屏蔽内层自动聚焦-->
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/row_space">
+
+                    <TextView
+                        style="@style/label"
+                        android:text="@string/task_name"
+                        android:layout_column="0"/>
+
+                    <EditText
+                        android:id="@+id/name"
+                        style="@style/input"
+                        android:hint="@string/task_name"
+                        tools:ignore="TouchTargetSizeCheck"
+                        android:inputType="text"
+                        android:layout_column="1"
+                        android:layout_weight="1"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/row_space">
+
+                    <TextView
+                        style="@style/label"
+                        android:text="@string/task_status"
+                        android:layout_column="0"/>
+
+                    <Spinner
+                        android:id="@+id/status"
+                        style="@style/select"
+                        android:layout_column="1"
+                        android:layout_weight="1"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/row_space">
+
+                    <TextView
+                        style="@style/label"
+                        android:text="@string/task_type"
+                        android:layout_column="0"/>
+
+                    <Spinner
+                        android:id="@+id/type"
+                        style="@style/select"
+                        android:layout_column="1"
+                        android:layout_weight="1"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/row_space">
+
+                    <TextView
+                        style="@style/label"
+                        android:text="@string/task_exec"
+                        android:layout_column="0"/>
+
+                    <TextView
+                        android:id="@+id/type_0"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/task_url_exec"
+                        android:layout_column="0"
+                        android:layout_weight="1"/>
+
+                    <LinearLayout
+                        android:id="@+id/type_"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_column="1"
+                        android:layout_weight="1"
+                        android:visibility="gone">
+
+                        <Spinner
+                            android:id="@+id/exec_minute"
+                            style="@style/select"/>
+
+                        <Spinner
+                            android:id="@+id/exec_hour"
+                            style="@style/select"/>
+
+                        <Spinner
+                            android:id="@+id/exec_day"
+                            style="@style/select"/>
+
+                        <Spinner
+                            android:id="@+id/exec_week"
+                            style="@style/select"/>
+
+                        <Spinner
+                            android:id="@+id/exec_month"
+                            style="@style/select"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/type_1"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="将于后续版本支持"
+                        android:layout_column="2"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:onClick="doLink"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/type_2"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/task_set_exec"
+                        android:layout_column="2"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:onClick="doLink"
+                        android:visibility="gone"/>
+                </TableRow>
+            </TableLayout>
+
+            <Button
+                android:id="@+id/submit"
+                style="@style/submit"
+                android:onClick="doSave"
+                android:text="@string/add_task"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
